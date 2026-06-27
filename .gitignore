@@ -1,0 +1,21 @@
+# Ambientes Virtuais
+venv/
+env/
+
+# Arquivos compilados do Python
+*.pyc
+__pycache__/
+
+# Banco de dados local (Não queremos commitar dados de teste)
+db.sqlite3
+
+# Arquivos de ambiente e chaves secretas (Boa prática para o futuro)
+.env
+
+# Arquivos do sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Pastas de IDEs (VS Code, PyCharm, etc)
+.vscode/
+.idea/
