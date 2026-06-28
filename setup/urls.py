@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('academia.urls')), # Conecta as URLs da academia debaixo do caminho /api/
+    path('api/', include('academia.urls')), 
 ]
