@@ -24,7 +24,7 @@ class AlunoSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}
         }
 
-
+    # criptografa a senha antes de salvar no banco de dados
     def create(self, validated_data):
        
         password = validated_data.pop('password', None)

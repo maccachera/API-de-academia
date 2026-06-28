@@ -74,4 +74,6 @@ class RegistroAcesso(models.Model):
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Acesso de {self.aluno.nome} em {self.data_hora}"
+        return f"Acesso de {self.aluno.nome} em {self.data_hora}"    
+    
+    
