@@ -41,12 +41,19 @@ class Plano(models.Model):
         return self.nome
     
 class Aluno(AbstractUser):
+    username = None  # Removendo o campo username
     nome = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     telefone = models.CharField(max_length=20)
-    plano = models.ForeignKey(Plano, on_delete=models.CASCADE)
-    unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE)
+    plano = models.ForeignKey(Plano, on_delete=models.PROTECT, null=True, blank=True)
+    unidade = models.ForeignKey(Unidade, on_delete=models.PROTECT, null=True, blank=True)
     is_ativo = models.BooleanField(default=True)
+
+    # Configurações de Login
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['nome'] # Campos obrigatórios ao criar superusuário
+
+    objects = AlunoManager() # Conecta com o gerenciador que criamos
 
     def __str__(self):
         return self.nome
